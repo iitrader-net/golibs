@@ -82,7 +82,6 @@ func NewRestApi(token string) *RestApi {
 }
 
 func (api *RestApi) RawRequest(method string, path string, param *string) (*http.Response, error) {
-	//   log.Println("request", method, path)
 	url := RestEndPoint + path
 	var body io.Reader
 	if param != nil {
@@ -131,7 +130,6 @@ func (api *RestApi) RequestHelper(method string, path string, param *string,
 			continue
 		}
 
-		//     log.Println(string(data))
 		if err := json.Unmarshal(data, reply); err != nil {
 			log.Printf("HTTP failed to decode: %v, json:\n%s", err, data)
 			continue

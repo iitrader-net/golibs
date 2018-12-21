@@ -231,6 +231,7 @@ func getNetValue() {
 }
 
 func main() {
+	// Please fill your own token as the parameter.
 	RestApi = golibs.NewRestApi("")
 
 	getQuote("2454.TW", time.Now().Unix())
