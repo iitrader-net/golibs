@@ -234,7 +234,7 @@ func main() {
 	// Please fill your own token as the parameter.
 	RestApi = golibs.NewRestApi("")
 
-	getQuote("2454.TW", time.Now().Unix())
+	getQuote("2454.TW", 0)
 
 	startTime := time.Now().Unix() - 24*60*60*7
 	getQuotePeriod("2454.TW", startTime, time.Now().Unix())
@@ -266,6 +266,8 @@ func main() {
 	setSub(topRankHash)
 
 	getSubList()
+
+	getWatchList()
 
 	getAllTags()
 

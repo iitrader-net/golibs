@@ -16,8 +16,7 @@ type RestReply struct {
 }
 
 func (reply *RestReply) IsSuccess() bool {
-	// TODO: All responses should include ret
-	return reply.Ret == "" || reply.Ret == "OK"
+	return reply.Ret == "OK"
 }
 
 func (reply *RestReply) GetError() string {
@@ -130,7 +129,7 @@ type RanksReply struct {
 
 type SubListReply struct {
 	RestReply
-	Sub []*Rank `json:"rank"`
+	Sub []*Rank `json:"sub"`
 }
 
 type AllTagsReply struct {
