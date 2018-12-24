@@ -230,6 +230,16 @@ func getNetValue() {
 	}
 }
 
+func setChat(msg, tag string) {
+	log.Println("===== Test Chat =====")
+	err := RestApi.Chat(msg, tag)
+	if err != nil {
+		log.Println("Error:", err)
+		return
+	}
+	log.Println("OK")
+}
+
 func main() {
 	// Please fill your own token as the parameter.
 	RestApi = golibs.NewRestApi("")
@@ -272,4 +282,6 @@ func main() {
 	getAllTags()
 
 	getNetValue()
+
+	setChat("Test msg", "")
 }

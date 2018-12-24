@@ -272,6 +272,13 @@ func (api *RestApi) NetValue() (NetValueReply, error) {
 	return reply, err
 }
 
+func (api *RestApi) Chat(msg, tag string) error {
+	var reply RestReply
+	param := fmt.Sprintf(`{"chat":"%s","tag":"%s"}`, msg, tag)
+	err := api.RequestHelper(http.MethodPost, "/chat", &param, &reply, false)
+	return err
+}
+
 func (api *RestApi) ApiToken() (ApiTokenReply, error) {
 	var reply ApiTokenReply
 	err := api.RequestHelper(http.MethodGet, "/apitoken", nil, &reply, false)
