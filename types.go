@@ -69,6 +69,8 @@ type Rank struct {
 	Hash        string          `json:"hash"`
 	Performance decimal.Decimal `json:"perf"`
 	Name        string          `json:"name"`
+	Tag         string          `json:"tag"`
+	Count       int             `json:"cnt"`
 	Expire      string          `json:"expire"`
 }
 

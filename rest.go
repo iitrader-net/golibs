@@ -21,7 +21,7 @@ import (
 
 const (
 	MaxRetry     = 5
-	RestEndPoint = "http://50.18.230.41:5691"
+	RestEndPoint = "http://rpc.iitrader.net:5691"
 )
 
 type RestApi struct {
@@ -87,6 +87,10 @@ func (api *RestApi) RawRequest(method string, path string, param *string) (*http
 	if param != nil {
 		body = bytes.NewBufferString(*param)
 	}
+	//   log.Println(url)
+	//   if param != nil {
+	//     log.Println(*param)
+	//   }
 	req, err := http.NewRequest(method, url, body)
 	if err != nil {
 		return nil, err
